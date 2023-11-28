@@ -1,42 +1,43 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
-
+import { useParams } from "react-router-dom";
+import CardCategories from './../componentes/Card';
+import {Grid, Typography, Container, Stack,} from '@mui/material/';
+import categorias from '../data/categorias';
+import CardProduct from "../componentes/CardProduct";
+import products from "../data/products";
+import { useEffect, useState } from "react";
 
 
 function Products(){
+    const {categories} = useParams();
+    const [productData, setProductsData] = useState([]);
+    
+    useEffect(()=>{
+        const filterArray = products.filter(item => item.category === categories);
+        setProductsData(filterArray);
+    },[categories]);
+
+
     return(
     <>
-        <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image= "./../assets/quilha.jpg"
-                  alt="quilha de surf"
-                />
-                <CardContent>   
-                    <Typography variant="h6" sx={{color:"primary.main"}}>
-                        Quilha
-                    </Typography>
-
-                    <Typography variant="body2" color="black">
-                        descrição do produto
-                    </Typography>
-
-                    <Typography variant="body1" color="black" sx={{mt:0.3}}>
-                        R$
-                    </Typography>
-
-                </CardContent>             
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary" variant="contained">
-                    ver produto
-                </Button>
-            </CardActions>
-        </Card> 
-        
-        
-    </>    
+    <Container maxWidth={"lg"} sx={{mt:4}}> 
+     <Stack spacing={1}>
+            <Typography variant= "h2" color={"primary"}>
+            {categories}
+            </Typography>
+            <Typography variant= "h5" color={"primary"}>
+            {productData.length} Produtos encontrados
+            </Typography>
+        </Stack>
+        <Grid container spacing={2} mt={5} >
+            {productData.map((item, index) => (
+                <Grid item xs={12} md={6} lg={4} xl={3} key={index} >
+                <CardProduct item ={item}/>    
+                </Grid>     
+            ) )}
+            
+          </Grid>   
+     </Container>
+    </>
 
     );
 }

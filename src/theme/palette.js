@@ -3,7 +3,7 @@ const palette = {
       main: "#b90000",
     },
     secondary: {
-        main: "rgba(185, 0, 0, 0.1)",
+        main: "rgb(202,218,228)",
     },
 }
 

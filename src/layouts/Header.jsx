@@ -2,6 +2,7 @@ import { AppBar, Box, Container, Toolbar, TextField, InputAdornment, Button, Sta
 import SearchIcon from '@mui/icons-material/Search';
 
 
+
 function Header () {
 
   const theme = useTheme();
@@ -19,7 +20,6 @@ function Header () {
             alignItems:"center", }}>
             <Box
           
-             sx={{height: 80}}
             > </Box>
 
             {isUpMd && 
