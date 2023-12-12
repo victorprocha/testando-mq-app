@@ -51,21 +51,38 @@ function ProductDetail(){
             slides={arrayImageShow}
             />
          <Grid container>
-            <Grid item sm={7}>
+            <Grid item sm={12} md={7} order={{ xs: 2, sm: 2, md: 1 }}>
                 <Grid container>
-                    <Grid item sm={2}>
-                        {productData?.listImages.map((item, index)=>(
-                            <Box key={index} sx={{width:"100%", height:"auto"}} >
-                                <IconButton onClick={()=>setImageShow(item)} sx={{width:"100%", height:"auto"}}>
-                                  <img src={item} alt={"imagem do produto"} 
-                                  height={"auto"} width={"100%"}
-                                  style={{borderRadius:"20px", overflow:"hidden"}}
-                                  />
-                                </IconButton>
-                            </Box>
+                    <Grid 
+                        item sm={12} 
+                        xs={12} 
+                        md={2}
+                        order={{ xs: 2, sm: 2, md: 1 }}>
+
+                            <Grid container>
+                                {productData?.listImages.map((item, index)=>(
+                            <Grid 
+                            key={index} 
+                            item sm={4} 
+                            xs={4} 
+                            md={12}
+                            order={{ xs: 2, sm: 2, md: 1 }}>
+                                <Box sx={{width:"100%", height:"auto"}} >
+                                    <IconButton onClick={()=>setImageShow(item)} sx={{width:"100%", height:"auto"}}>
+                                    <img src={item} alt={"imagem do produto"} 
+                                    height={"auto"} width={"100%"}
+                                    style={{borderRadius:"20px", overflow:"hidden"}}
+                                    />
+                                    </IconButton>
+                                </Box>
+                        </Grid>
                         ))}
+                            </Grid>
+                        
                     </Grid>
-                    <Grid item sm={10}>
+        
+    
+                    <Grid item sm={12} xs={12} md={10} order={{ xs: 1, sm: 1, md: 2 }}>
                         <IconButton 
                         onClick={handleShowImage}
                           sx={{width:"100%", height:"auto"}}>
@@ -78,7 +95,7 @@ function ProductDetail(){
                 </Grid>
             </Grid>
 
-            <Grid item sm={5}>
+            <Grid item sm={12} md={5} order={{ xs: 1, sm: 1, md: 2 }}>
                 <Stack spacing={3}>
                 <Typography variant="h4" sx={{color:"primary.main"}}>
                             {productData?.title}
@@ -94,21 +111,22 @@ function ProductDetail(){
                 </Stack>
             </Grid>
 
-            <Grid item sm={12} mt={2}>
+            <Grid item sm={12} mt={2} order={{ xs: 3, sm: 3 }}>
                 <Typography variant="h2" color="primary">
                      Produtos da mesma categoria
                 </Typography>
-            </Grid>
-            <Grid container mt={5} mb={3}>
 
-                {otherProducts.length > 0 &&
-                 otherProducts.slice(0, 3).map((item, index) => (
-                    <Grid item xs={12} md={6} lg={4} xl={4} key={index} >
-                    <CardProduct item ={item}/>    
-                    </Grid>     
-                ) )}
-            </Grid>
+                <Grid container mt={5} mb={3} spacing={5}>
 
+                    {otherProducts.length > 0 &&
+                    otherProducts.slice(0, 3).map((item, index) => (
+                        <Grid item xs={12} md={6} lg={4} xl={4} key={index}>
+                        <CardProduct item ={item}/>    
+                        </Grid>     
+                    ) )}
+               </Grid>
+
+            </Grid>
         </Grid>
         </>
     )

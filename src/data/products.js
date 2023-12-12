@@ -7,6 +7,10 @@ const products = [
       price: "150.00",
       category: "proteins",
       listImages: [
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -30,7 +34,10 @@ const products = [
       price: "140.00",
       category: "proteins",
       listImages: [
-        
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -40,7 +47,10 @@ const products = [
       price: "120.00",
       category: "proteins",
       listImages: [
-     
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -50,7 +60,10 @@ const products = [
       price: "160.00",
       category: "proteins",
       listImages: [
-       ,
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -60,7 +73,10 @@ const products = [
       price: "120.00",
       category: "thermogenic",
       listImages: [
-     
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -70,7 +86,10 @@ const products = [
       price: "110.00",
       category: "thermogenic",
       listImages: [
-     ,
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -81,7 +100,10 @@ const products = [
       price: "100.00",
       category: "thermogenic",
       listImages: [
-
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -91,7 +113,10 @@ const products = [
       price: "90.00",
       category: "thermogenic",
       listImages: [
-      
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -102,7 +127,10 @@ const products = [
       price: "70.00",
       category: "supplements",
       listImages: [
-      
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -112,7 +140,10 @@ const products = [
       price: "60.00",
       category: "accessories",
       listImages: [
-       
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -123,7 +154,10 @@ const products = [
       price: "40.00",
       category: "accessories",
       listImages: [
-       
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -134,7 +168,10 @@ const products = [
       price: "20.00",
       category: "accessories",
       listImages: [
-     
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -145,7 +182,10 @@ const products = [
       price: "80.00",
       category: "accessories",
       listImages: [
-        
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -156,7 +196,10 @@ const products = [
       price: "100.00",
       category: "accessories",
       listImages: [
-   
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -166,7 +209,10 @@ const products = [
       price: "80.00",
       category: "clothes",
       listImages: [
- 
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -176,7 +222,10 @@ const products = [
       price: "90.00",
       category: "clothes",
       listImages: [
-    
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -187,7 +236,10 @@ const products = [
       price: "70.00",
       category: "clothes",
       listImages: [
-     
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -197,7 +249,10 @@ const products = [
       price: "50.00",
       category: "clothes",
       listImages: [
- 
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -208,7 +263,10 @@ const products = [
       price: "120.00",
       category: "clothes",
       listImages: [
-  
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -219,7 +277,10 @@ const products = [
       price: "50.00",
       category: "supplements",
       listImages: [
-      
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -230,7 +291,10 @@ const products = [
       price: "30.00",
       category: "supplements",
       listImages: [
-    
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -241,7 +305,10 @@ const products = [
       price: "40.00",
       category: "supplements",
       listImages: [
-       
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -252,7 +319,10 @@ const products = [
       price: "25.00",
       category: "supplements",
       listImages: [
-    
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
@@ -264,43 +334,55 @@ const products = [
       category: "supplements",
       image: "/assets/supplementsPhoto5.png",
       listImages: [
-        
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
       id: 26,
-      title: "Glutamina",
+      title: "GlutaminaD",
       description:
         "Suplemento de glutamina para recuperação muscular e suporte ao sistema imunológico.",
       price: "35.00",
       category: "supplements",
       image: "/assets/supplementsPhoto5.png",
       listImages: [
-        
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
       id: 27,
-      title: "Glutamina",
+      title: "GlutaminaW",
       description:
         "Suplemento de glutamina para recuperação muscular e suporte ao sistema imunológico.",
       price: "35.00",
       category: "supplements",
       image: "/assets/supplementsPhoto5.png",
       listImages: [
-        
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
     {
       id: 28,
-      title: "Glutamina",
+      title: "GlutaminaQ",
       description:
         "Suplemento de glutamina para recuperação muscular e suporte ao sistema imunológico.",
       price: "35.00",
       category: "supplements",
       image: "/assets/supplementsPhoto5.png",
       listImages: [
-       
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha.jpg",
+        "/assets/quilha2.webp",
       ],
     },
   ];

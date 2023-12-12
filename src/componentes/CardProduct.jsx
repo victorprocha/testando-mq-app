@@ -1,4 +1,4 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { Button, Card, CardActionArea   , CardContent, CardMedia, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 
@@ -10,37 +10,43 @@ function CardProduct ({item}){
 
     return(
     <>
-        <Card sx={{ maxWidth: 345, backgroundColor: "secondary.main" }}>
+        <Card sx={{ minHeight: 350, backgroundColor: "secondary.main" }}>
             <CardActionArea>
-                <CardMedia
+                <CardMedia 
                   component="img"
-                  height="140"
+                  height="160"
                   image= "./../assets/quilha.jpg"
                   alt="quilha de surf"
                 />
-                <CardContent>   
-                    <Typography variant="h6" sx={{color:"primary.main"}}>
-                        {item.title}
-                    </Typography>
+                <CardContent 
+                  sx={{display: "flex", 
+                  flexDirection: "column", 
+                  minHeight: 200, 
+                  justifyContent: "space-between"}} >   
 
-                    <Typography variant="body2" color="black">
-                        {item.description}
-                    </Typography>
+                 <Stack>
+                    <Typography variant="h6" sx={{color:"primary.main"}}>
+                            {item.title}
+                     </Typography>
+
+                     <Typography variant="body2" color="black">
+                            {item.description}
+                     </Typography>
+                 </Stack>
 
                     <Typography variant="body1" color="black" sx={{mt:0.3}}>
                         R$ {item.price}
                     </Typography>
 
+                    <Button  onClick={handleClick}
+                        size="small"
+                        color="primary" 
+                        variant="contained">
+                            ver produto
+                    </Button>
+
                 </CardContent>             
             </CardActionArea>
-            <CardActions>
-                <Button  onClick={handleClick}
-                 size="small"
-                 color="primary" 
-                 variant="contained">
-                    ver produto
-                </Button>
-            </CardActions>
         </Card> 
         
         
