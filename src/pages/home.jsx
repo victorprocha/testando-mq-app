@@ -12,7 +12,7 @@ function Home() {
     
     
     <Typography variant='h4' color={'primary'}>
-      Produtos Fitlife - Categorias
+      Categorias
     </Typography>
     <Grid container spacing={2} mt={5} >
 
