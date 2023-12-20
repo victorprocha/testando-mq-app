@@ -1,9 +1,8 @@
 import { AppBar, Box, Container, Toolbar, TextField, InputAdornment, Button, Stack, useTheme, useMediaQuery, Autocomplete } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import products from "./../data/products";
+import products from "../../data/products";
 import { useState } from "react";
 import { createSearchParams, useNavigate } from "react-router-dom";
-
 
 
 function Header () {
@@ -32,9 +31,13 @@ function Header () {
             display: "flex", 
             justifyContent: "space-between", 
             alignItems:"center", }}>
+              
             <Box
-          
-            > </Box>
+             component="img"
+             sx={{ height: 80, width:"auto"}}
+             alt="Logo Fitlife"
+             src="./../../assets/fitlife-logo.png"
+            />
 
             {isUpMd && 
             
@@ -89,6 +92,7 @@ function Header () {
             color="secondary"
             size= {isUpMd ? 'large' : 'small'}
             sx={{color:"primary.main", height:50}}
+            onClick={() => navigate("auth/login")}
             >
               Entrar no Sistema
             </Button>

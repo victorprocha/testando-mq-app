@@ -1,4 +1,6 @@
-import Layout from "../layouts";
+import LayoutAuth from "../layouts/auth";
+import Layout from "../layouts/mostruario";
+import Login from "../pages/auth/login";
 import Home from "../pages/home";
 import ProductDetail from "../pages/product-detail";
 import Products from "../pages/products";
@@ -31,6 +33,16 @@ const routes = [
 
       ]
     },
+    {
+      path: 'auth',
+      element: <LayoutAuth/>,
+      children:[
+        {
+          path: 'login',
+          element: <Login/>,
+        }
+      ]
+    }
     
   ];
 
