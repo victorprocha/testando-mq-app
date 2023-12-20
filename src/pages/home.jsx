@@ -1,7 +1,6 @@
 
-import {useEffect, useState } from 'react';
 import CardCategories from './../componentes/Card';
-import {Grid, Typography, Container,} from '@mui/material/';
+import {Grid, Typography,} from '@mui/material/';
 import categorias from '../data/categorias';
 
 
