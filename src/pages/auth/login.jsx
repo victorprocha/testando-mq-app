@@ -1,22 +1,24 @@
-import { Button, Stack, TextField, Typography } from "@mui/material";
+import { Button, FormHelperText, IconButton, InputAdornment, Stack, TextField, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import GoogleIcon from '@mui/icons-material/Google';
+import { Formik } from "formik";
+import * as Yup from 'yup';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useState } from "react";
 
 
-
 function Login(){
-   const [email, setEmail] = useState('');
-   const [password, setPassword] = useState('');
+   const [visible, setVisible] = useState(false);
 
-   function handleSubmit(){
-      console.log(email, password)
+   function handleVisible(){
+      setVisible(!visible);
    }
 
     return(
         <Stack
         direction={"column"}
-        spacing={0.9}
+        spacing={2}
         width={"100%"}
         alignItems={"center"}
         mt={4}
@@ -27,21 +29,80 @@ function Login(){
          <Typography variant="h6" color="primary" mt={1}>
             Bem vindo ao nosso sistema!
          </Typography>
-         <Stack spacing={3} width={"100%"}>
-            <TextField value={email} onChange={(e)=> setEmail(e.target.value)} fullWidth label = "Email"/>
-            <TextField value={password} onChange={(e)=> setPassword(e.target.value)} fullWidth label = "Senha"/>
-         </Stack>
-         <Typography 
-         variant="body2"
-         component={Link}
-         to="/"
-         sx={{ textDecoration: "none"}}
+         <Formik  initialValues={{ email: '', password: '' }}
+         validationSchema={Yup.object().shape({
+            email: Yup.string().email('E-mail invalido').required('O e-mail é obrigatório'),
+            password:Yup.string().required("A senha é obrigatória")
+          })}
+          onSubmit={(values, { setSubmitting }) => {
+            console.log(values)
+          }}
          >
-            Esqueci minha senha
-         </Typography>
-         <Button variant="contained" size="large" onClick={handleSubmit}>
-            Entrar
-         </Button>
+            {({
+         values,
+         errors,
+         touched,
+         handleChange,
+         handleBlur,
+         handleSubmit,
+         isSubmitting,
+       }) => (
+            <form noValidate onSubmit={handleSubmit} style={{width:"100%"}}>
+               <Stack spacing={2} width={"100%"}>
+                  <TextField 
+                  name="email"
+                  type="email"
+                  id="email"
+                  value={values.email} 
+                  onChange={handleChange} 
+                  onBlur={handleBlur}
+                  fullWidth label = "Email"/>
+                  {touched.email && errors.email && (
+                  <FormHelperText error>{errors.email}</FormHelperText>
+                  )}
+
+                  <TextField 
+                  name="password"
+                  type={visible ? "text" : "password"}
+                  id="password"
+                  value={values.password} 
+                  onChange={handleChange} 
+                  onBlur={handleBlur}
+                  fullWidth 
+                  label = "Senha"
+                  InputProps={{
+                     endAdornment: (
+                       <InputAdornment position="end">
+                        <IconButton onClick={handleVisible}>
+                         {visible? <VisibilityOffIcon/> : <VisibilityIcon/>}
+                        </IconButton>
+                       </InputAdornment>
+                     ),
+                   }}
+                  />
+
+                   {touched.password && errors.password && (
+                  <FormHelperText error>{errors.password}</FormHelperText>
+                  )}
+               </Stack>
+
+               <Stack direction={"column"} spacing={2} mt={2}>
+                  <Typography 
+                  variant="body2"
+                  component={Link}
+                  to="/"
+                  sx={{ textDecoration: "none"}}
+                  >
+                     Esqueci minha senha
+                  </Typography>
+                  <Button variant="contained" size="large" type="submit">
+                     Entrar
+                  </Button>
+               </Stack>
+            </form>
+       )}
+         </Formik>
+ 
          <Typography variant="body2">ou entre com suas redes sociais </Typography>
          <Button
           variant="contained"

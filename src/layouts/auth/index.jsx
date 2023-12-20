@@ -1,11 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
-import { Box, Container, Grid, Stack, } from "@mui/material";
+import { Box, Container, Grid, Stack, useMediaQuery, } from "@mui/material";
+import { useTheme } from "@emotion/react";
 
 function LayoutAuth(){
+   const theme = useTheme();
+   const isUpMd = useMediaQuery(theme.breakpoints.up("md"));
+
     return(
         <>
         <Grid container>
-          <Grid item lg={8}>
+          <Grid item lg={8} md={12} xs={12}>
             <Container
             maxWidth={"lg"}
             sx={{
@@ -18,9 +22,10 @@ function LayoutAuth(){
              }} 
             >
 
-          <Stack direction={"column"}
-           alignItems={"flex-start "}
-           width={"50%"}
+          <Stack 
+           direction={"column"}
+           alignItems={isUpMd ? "flex-start" : "center"}
+           width={isUpMd ? "50%" : "100%"}
            height={"100%"}
            >
             <Link to="/">
@@ -36,13 +41,15 @@ function LayoutAuth(){
         
             </Container>
           </Grid>
-          <Grid item lg={4}>
-            <Box sx={{backgroundImage:"url('/assets/fundo.jpg')",
-            backgroundRepeat:"no-repeat",
-            backgroundSize:"cover",
-            height:"100vh",
-            }} />
-          </Grid>
+          {isUpMd &&(
+             <Grid item lg={4}>
+             <Box sx={{backgroundImage:"url('/assets/fundo.jpg')",
+             backgroundRepeat:"no-repeat",
+             backgroundSize:"cover",
+             height:"100vh",
+             }} />
+           </Grid>
+          )}
         </Grid>
         </>
     )
