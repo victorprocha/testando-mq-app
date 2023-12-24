@@ -8,7 +8,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useState } from "react";
 
 
-function Login(){
+function Signup(){
    const [visible, setVisible] = useState(false);
 
    function handleVisible(){
@@ -18,16 +18,16 @@ function Login(){
     return(
         <Stack
         direction={"column"}
-        spacing={1.2}
+        spacing={1}
         width={"100%"}
         alignItems={"center"}
         mt={3}
         >
          <Typography variant="h5" fontWeight={"bold"} color="primary">
-            Entrar no Sistema
+            Cadastrar-se
          </Typography>
-         <Typography variant="h6" color="primary" mt={1}>
-            Bem vindo ao nosso sistema!
+         <Typography variant="h6" color="primary">
+            Junte-se ao time 
          </Typography>
          <Formik  initialValues={{ email: '', password: '' }}
          validationSchema={Yup.object().shape({
@@ -48,7 +48,7 @@ function Login(){
          isSubmitting,
           }) => (
             <form noValidate onSubmit={handleSubmit} style={{width:"100%"}}>
-               <Stack spacing={2} width={"100%"}>
+               <Stack spacing={1.5} width={"100%"}>
                   <TextField 
                   name="email"
                   type="email"
@@ -81,26 +81,29 @@ function Login(){
                    }}
                   />
 
+                 <TextField 
+                  name="password"
+                  type={visible ? "text" : "password"}
+                  id="password"
+                  value={values.password} 
+                  onChange={handleChange} 
+                  onBlur={handleBlur}
+                  fullWidth 
+                  label = "Digite novamente sua senha"
+                  />
+
                    {touched.password && errors.password && (
                   <FormHelperText error>{errors.password}</FormHelperText>
                   )}
                </Stack>
 
-               <Stack direction={"column"} spacing={2} mt={2}>
-                  <Typography 
-                  variant="body2"
-                  component={Link}
-                  to="/"
-                  sx={{ textDecoration: "none"}}
-                  >
-                     Esqueci minha senha
-                  </Typography>
+               <Stack direction={"column"} spacing={1} mt={1}>
                   <Button variant="contained" size="large" type="submit">
                      Entrar
                   </Button>
                </Stack>
             </form>
-       )}
+            )}
          </Formik>
  
          <Typography variant="body2">ou entre com suas redes sociais </Typography>
@@ -113,15 +116,15 @@ function Login(){
             Continue com google
          </Button>
          <Typography variant="body1" color="primary">
-            Não tem uma conta?
+            Já tem uma conta?
          </Typography>
          <Typography
-          variant="h6"
+          variant="body1"
           component={Link}
-          to="/auth/signup"
+          to="/auth/login"
           sx={{textDecoration:"none"}}
          >
-            Cadastrar
+            Clique para fazer login
          </Typography>
         </Stack>
     )
@@ -129,4 +132,4 @@ function Login(){
 
 
 
-export default Login;
+export default Signup;
